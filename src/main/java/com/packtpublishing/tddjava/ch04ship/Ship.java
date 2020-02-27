@@ -30,4 +30,23 @@ public class Ship {
     public void turnRight() {
         location.turnRight();
     }
+
+    public void receiveCommand(String command) {
+        char[] commands = command.toCharArray();
+        for (int i = 0; i < commands.length; i++) {
+            char comm = commands[i];
+
+            if (comm == 'f') {
+                moveForward();
+            } else if (comm == 'b') {
+                moveBackward();
+            } else if (comm == 'l') {
+                turnLeft();
+            } else {
+                turnRight();
+            }
+
+        }
+
+    }
 }
