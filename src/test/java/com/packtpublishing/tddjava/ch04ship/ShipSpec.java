@@ -8,11 +8,15 @@ import static org.testng.Assert.*;
 public class ShipSpec {
     private Ship ship;
     private Location location;
+    private Planet planet;
 
     @BeforeMethod
     public void setUp() {
-        location = new Location(new Point(21,13), Direction.NORTH);
-        ship = new Ship(location);
+        location = new Location(new Point(21, 13), Direction.NORTH);
+
+        Point max = new Point(50, 50);
+        planet = new Planet(max);
+        ship = new Ship(location, planet);
     }
 
     public void whenInstantiatedThenLocationIsSet() {
@@ -78,5 +82,12 @@ public class ShipSpec {
         ship.receiveCommand("rflb");
 
         assertEquals(ship.getLocation(), expected);
+    }
+
+    @Test
+    public void whenInstantiatedThenPlantIsStored() {
+        ship = new Ship(location, planet);
+        assertEquals(ship.getPlanet(), planet);
+
     }
 }

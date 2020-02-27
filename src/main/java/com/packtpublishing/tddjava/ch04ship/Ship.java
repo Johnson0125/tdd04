@@ -2,9 +2,12 @@ package com.packtpublishing.tddjava.ch04ship;
 
 public class Ship {
     private Location location;
+    private Planet planet;
 
-    public Ship(Location location) {
+
+    public Ship(Location location, Planet planet) {
         this.location = location;
+        this.planet = planet;
     }
 
     public Location getLocation() {
@@ -29,6 +32,14 @@ public class Ship {
 
     public void turnRight() {
         location.turnRight();
+    }
+
+    public Planet getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(Planet planet) {
+        this.planet = planet;
     }
 
     public void receiveCommand(String command) {
