@@ -22,4 +22,12 @@ public class Ship {
     public void moveBackward() {
         location.backward();
     }
+
+    public void turnLeft() {
+        location.turnLeft();
+    }
+
+    public void turnRight() {
+        location.turnRight();
+    }
 }
