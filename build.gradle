@@ -3,6 +3,8 @@ apply plugin: 'java'
 version = '1.0'
 
 repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
     mavenCentral()
 }
 
